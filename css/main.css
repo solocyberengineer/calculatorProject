@@ -1,0 +1,104 @@
+:root {
+    --calcBackground: rgb(14, 17, 27);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.calcLayout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 530px;
+    background-color: #202020;
+    /* background-color: var(--calcBackground); */
+    border-radius: 0.4vw;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.windowTopbar {
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    height: 30px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.outputBar {
+    /* background-color: blue; */
+    width: 100%;
+    height: 150px;
+    color: white;
+}
+.outputBar h1:nth-child(1) {
+    font-size: 1.2vw;
+    padding-inline: 10px;
+}
+.outputBar h1:nth-child(2) {
+    float: right;
+    font-size: 3vw;
+}
+
+.calcSetFuncs {
+    width: 100%;
+    height: 30px;
+    display: grid;
+    grid-template-columns: calc(100% / 6)
+                           calc(100% / 6)
+                           calc(100% / 6)
+                           calc(100% / 6)
+                           calc(100% / 6)
+                           calc(100% / 6);
+}
+.calcSetFuncs button {
+    background-color: transparent;
+    border: none;
+    color: white
+}
+
+.calcSetFuncs button:nth-child(1) {color: rgba(255,255,255,0.4)}
+.calcSetFuncs button:nth-child(2) {color: rgba(255,255,255,0.4)}
+.calcSetFuncs button:nth-child(6) {color: rgba(255,255,255,0.4)}
+
+.calcBtns {
+    /* background-color: blue; */
+    /* width: 100%; */
+    height: calc(530px - 30px - 150px - 30px - 4px);
+    display: grid;
+    grid-template-rows: calc(100% / 6) 
+                        calc(100% / 6) 
+                        calc(100% / 6) 
+                        calc(100% / 6) 
+                        calc(100% / 6) 
+                        calc(100% / 6) 
+                        calc(100% / 6);
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 2px;
+}
+
+.calcBtns button {
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+    margin: 1.2px;
+    color: white;
+    background-color: rgb(56, 59, 60);
+    font-size: large;
+}
+.calcBtns button:hover {
+    background-color: rgb(60, 63, 66);
+}
+
+.calcBtns button:last-child {
+    background-color: rgb(98, 192, 223);
+    color: black;
+}
