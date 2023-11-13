@@ -15,6 +15,8 @@ for (let i = 0; i < operatorBtns.length; i++) operators.push(operatorBtns[i].tex
 
 console.log(operatorBtns)
 
+
+
 for( let i = 0; i < numberBtns.length; i++ ){
     if(numberBtns[i].textContent != '0'){
         numberBtns[i].onclick = function(){
@@ -61,7 +63,7 @@ for( let i = 0; i < operatorBtns.length; i++ ){
     }
 }
 
-equalSign[0].onclick = function(){
+function evaluateSum(){
     let tempDisplay = display.textContent;
 
     if( tempDisplay.indexOf('×') != -1 ){
@@ -78,10 +80,14 @@ equalSign[0].onclick = function(){
     display.textContent = eval( tempDisplay ).toString()
 }
 
-clearBtn[0].onclick = function(){
+equalSign[0].addEventListener('click', evaluateSum)
+
+function clearSum(){
     display.textContent = '0'
     zeroState = true;
 }
+
+clearBtn[0].addEventListener('click', clearSum);
 
 decimalpoint[0].onclick = function(){
     zeroState = false
