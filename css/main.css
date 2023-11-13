@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .calcLayout {
@@ -45,6 +46,7 @@
 .outputBar h1:nth-child(2) {
     float: right;
     font-size: 3vw;
+    font-weight: 100;
 }
 
 .calcSetFuncs {
@@ -101,4 +103,54 @@
 .calcBtns button:last-child {
     background-color: rgb(98, 192, 223);
     color: black;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .outputBar h1:nth-child(1) {
+        font-size: 3vw;
+        padding-inline: 10px;
+    }
+    .outputBar h1:nth-child(2) {
+        float: right;
+        font-size: 4vw;
+        font-weight: 100;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .outputBar h1:nth-child(1) {
+        font-size: 4.5vw;
+        padding-inline: 10px;
+    }
+    .outputBar h1:nth-child(2) {
+        float: right;
+        font-size: 7vw;
+        font-weight: 100;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .calcLayout {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 260px;
+        height: 430px;
+        background-color: #202020;
+        /* background-color: var(--calcBackground); */
+        border-radius: 0.4vw;
+        box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
+    .calcBtns {
+        /* background-color: blue; */
+        /* width: 100%; */
+        height: calc(430px - 30px - 150px - 30px - 4px);
+        display: grid;
+        grid-template-rows: calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6);
+        grid-template-columns: 25% 25% 25% 25%;
+        padding: 2px;
+    }
 }
