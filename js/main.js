@@ -13,10 +13,6 @@ let decimalpoint = document.querySelectorAll('[btn_type="decimalpoint"]');
 
 for (let i = 0; i < operatorBtns.length; i++) operators.push(operatorBtns[i].textContent);
 
-console.log(operatorBtns)
-
-
-
 for( let i = 0; i < numberBtns.length; i++ ){
     if(numberBtns[i].textContent != '0'){
         numberBtns[i].onclick = function(){
@@ -39,9 +35,8 @@ for( let i = 0; i < numberBtns.length; i++ ){
 
 backspace[0].onclick = function(){
     display.textContent = display.textContent.slice(0, -1)
-
+    
     let outLength = display.textContent.length;
-
     if( outLength == 0 ){
         zeroState = true;
         display.textContent = '0'
@@ -91,7 +86,11 @@ clearBtn[0].addEventListener('click', clearSum);
 
 decimalpoint[0].onclick = function(){
     zeroState = false
-    if( display.textContent.indexOf('.') == -1){
-        display.textContent += '.'
-    }
+    let calcs = display.textContent.split(/\+|\-|\÷|\×/)
+
+    for(let i = 0; i < calcs.length; i++){
+        if( calcs[i].indexOf('.') == -1 ){
+            display.textContent += '.'
+        }
+    }  
 }
